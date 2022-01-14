@@ -57,7 +57,7 @@ class Tool:  # This class is responsible about Tools
 			return "Couldn't retrieve the date"
 
 	def clone(self, *path):  # Clone the tool to the path argument
-		print 'Installing: ' + self.name + ': ',
+		print('Installing: ' + self.name + ': ', end=" ")
 		if not os.system('git clone -q ' + self.url + ' ' + ('/tmp/' if path else '') + self.name):
 			print green + 'Ok' + end
 			open(('/tmp/' if path else '') + self.name + '/install', 'w').write(Tool.strfTime(datetime.now()))
